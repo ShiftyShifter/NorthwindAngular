@@ -1,8 +1,12 @@
 <app-header></app-header>
-<app-landing></app-landing>
-<app-register></app-register>
-<app-login></app-login>
-<input type="text" [(ngModel)]="name">
-<p>{{name}}</p>
+<app-landing *ngIf="true"></app-landing>
+<app-register *ngIf="true"></app-register>
+<app-login *ngIf="true"></app-login>
+
+<hr>
+<hr>
+
+<h1>Adding Items</h1>
+<app-products></app-products>
 
 

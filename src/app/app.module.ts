@@ -8,6 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { LandingComponent } from './landing/landing.component';
 import { FormsModule } from '@angular/forms';
+import { ProductsComponent } from './products/products.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     HeaderComponent,
     RegisterComponent,
     LoginComponent,
-    LandingComponent
+    LandingComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
