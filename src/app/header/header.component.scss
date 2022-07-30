@@ -88,9 +88,8 @@ header{
 }
 
 header:hover{
-    background: #eeeeee;
-
-    
+    //background: #eeeeee;
+    background: #d8d8d8;
 }
 
 @media screen and (min-width: 800px){
@@ -127,7 +126,8 @@ header:hover{
 
     header:hover{
         ul{
-            background: #eeeeee;
+            //background: #eeeeee;
+            background: #d8d8d8;
         }
     }
 }

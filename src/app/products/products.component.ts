@@ -9,6 +9,7 @@ export class ProductsComponent implements OnInit {
   allowAddButton: boolean = true;
   productName: string;
   products = [];
+  customColor: string;
 
   onUpdateProductName(event: Event){
     //console.log(event);
@@ -21,11 +22,13 @@ export class ProductsComponent implements OnInit {
   }
 
   onAddProduct(){
-    //console.log(this.products + this.productName);
+    this.products.push(this.productName);
+    this.productName = "";
+    this.allowAddButton = true;
   }
 
-  clickMe(productName:string){
-    console.log('it does nothing', productName);
+  getColor(){
+    return this.productName === 'online' ? 'green' : 'red';
   }
 
   constructor() { }

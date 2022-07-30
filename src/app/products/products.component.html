@@ -1,3 +1,9 @@
 <button [disabled]="allowAddButton" (click)="onAddProduct()">Add</button>
-<input type="text" (input)="onUpdateProductName($event)">
+<input type="text" (input)="onUpdateProductName($event)" [(ngModel)]="productName">
 <label for="text">Type something to activate the button </label>
+<hr>
+<input type="text" [(ngModel)]="customColor">
+<label for="text">Type a color </label>
+
+<p 
+[ngStyle]="{backgroundColor: customColor}" *ngFor="let product of products">{{product}}</p>
