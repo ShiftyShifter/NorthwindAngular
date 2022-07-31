@@ -38,21 +38,23 @@
             max-width: 550px;
             font-size: 3em;
             span:first-child{
-                transition: 500ms;
+                //transition: 500ms;
+                animation: northwindColor infinite 3s;
             }
             span:last-child{
-                color: #2e4bca;
-                transition: 500ms;
+                //color: #2e4bca;
+                //transition: 500ms;
+                animation: northwindColorSecond infinite 3s;
             }
         }
-        h2:hover{
+        /* h2:hover{
             span:first-child{
                 color: #2e4bca;
             }
             span:last-child{
                 color: #303030;
             }
-        }
+        } */
         p{
             max-width: 550px;
             font-size: 1.5em;
@@ -108,6 +110,29 @@
             color: #525252;
             font-weight: 500!important;
         }
+    }
+}
+
+@keyframes northwindColor {
+    0%{
+        color: #2e4bca;
+    }
+    50%{
+        color: #303030;
+    }
+    100%{
+        color: #2e4bca;
+    }
+}
+@keyframes northwindColorSecond {
+    0%{
+        color: #303030;
+    }
+    50%{
+        color: #2e4bca;
+    }
+    100%{
+        color: #303030;
     }
 }
     
