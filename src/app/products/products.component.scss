@@ -1,12 +1,48 @@
-button{
-    font-size: 1.5em;
-}
+.product-card-outer{
+    //border: 2px solid red;
+    padding: 1em;
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
 
-input {
-    font-size: 1.5em;
-    border: 1px solid grey;
-}
-
-*{
-    margin: 1em;
+    .product-card{
+        border: 1px solid rgba($color: #c7c7c7, $alpha: 1.0);
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 6px 8px, rgba(0, 0, 0, 0.22) 0px 3px 5px;
+        background: white;
+        cursor: pointer;
+        text-align: center;
+        border-radius: 20px;
+        padding: 1em;
+        .product-image-holder{
+            //border: 1px solid green;
+            width: 100%;
+            img{
+                width: 150px;
+                margin: 0 auto;
+            }
+        }
+        p{
+            margin-top: 1em;
+            max-width: 180px;
+            font-size: 1.1em;
+        }
+        .price-container{
+            max-width: 180px;
+            margin-top: 1em;
+            position: relative;
+            text-align: left;
+            font-weight: bold;
+            font-size: .9em;
+            svg:first-child{
+                position: absolute;
+                right: 35px;
+                bottom: 0;
+            }
+            svg:last-child{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+        }
+    }
 }
