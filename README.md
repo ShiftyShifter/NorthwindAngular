@@ -2,6 +2,7 @@
 
 ## Landing Page
 ![LandingPage](https://i.imgur.com/zdnAarK.png)
+![LandingPageGif](https://media.giphy.com/media/AfR3fqul3RuT1peMpu/giphy.gif)
 
 ### Landing Page Mobile
 ![LandingPageMobile](https://i.imgur.com/rhalz3T.png)
