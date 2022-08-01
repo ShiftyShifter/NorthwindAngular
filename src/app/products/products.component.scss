@@ -13,6 +13,8 @@
         text-align: center;
         border-radius: 20px;
         padding: 1em;
+        position: relative;
+        transition: 300ms ease;
         .product-image-holder{
             //border: 1px solid green;
             width: 100%;
@@ -25,6 +27,7 @@
             margin-top: 1em;
             max-width: 180px;
             font-size: 1.1em;
+            color: #1f1f1f;
         }
         .price-container{
             max-width: 180px;
@@ -44,5 +47,32 @@
                 bottom: 0;
             }
         }
+        .discount{
+            position: absolute;
+            background: #2e4bca;
+            padding: 0.2em 0.2em;
+            font-size: 0.9em;
+            border-radius: 3px;
+            color: white;
+            left: 15px;
+            top: 20px;
+        }
+    }
+
+    .product-card:hover{
+        transform: translateY(-10px);
+    }
+}
+
+@media screen and (max-width: 450px){
+    .product-card-outer{
+        justify-content: center;
+    }
+}
+
+@media screen and (min-width: 1300px){
+    .product-card-outer{
+        padding: 2.5em;
+        gap: 2em;
     }
 }
