@@ -13,6 +13,6 @@
 ![LoginPage](https://i.imgur.com/fyWNzyj.png)
 
 ## Full Page Video
-![FullPage](https://youtu.be/WNKswY7knOY)
+https://youtu.be/WNKswY7knOY
 
 
