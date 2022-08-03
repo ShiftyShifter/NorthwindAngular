@@ -1,7 +1,7 @@
 # Alperen Üstün Techcareer Angular Bootcamp Task
 
 ## Landing Page
-![LandingPage](https://i.imgur.com/zdnAarK.png)
+![LandingPage](https://i.imgur.com/35XDDLr.png)
 
 ### Landing Page Mobile
 ![LandingPageMobile](https://i.imgur.com/rhalz3T.png)
