@@ -12,5 +12,6 @@
 ## Login page
 ![LoginPage](https://i.imgur.com/fyWNzyj.png)
 
-## Products
-![ProductsPage](https://i.imgur.com/3r27c7E.png)
+## Full Page Video
+https://youtu.be/WNKswY7knOY
+
