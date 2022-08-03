@@ -13,7 +13,7 @@
 ![LoginPage](https://i.imgur.com/fyWNzyj.png)
 
 ## Products
-![Products](https://i.imgur.com/HdQm7e7.png)
+![Products](https://i.imgur.com/3r27c7E.png)
 
 ## Full Page Video
 https://youtu.be/WNKswY7knOY
