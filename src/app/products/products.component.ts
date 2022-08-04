@@ -11,6 +11,7 @@ export class ProductsComponent implements OnInit {
   products: IProducts[];
   productsList: ProductsList;
   console = console;
+  myInput: string;
 
   constructor() {
     this.productsList = new ProductsList();
