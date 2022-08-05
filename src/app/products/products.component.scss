@@ -71,6 +71,12 @@
                     height: 100%;
                     font-size: 1em;
                     border: 1px solid rgba($color: #575757, $alpha: 0.8);
+                    background-image: linear-gradient(to top, #2058d1, #1e53c3, #1c4db6, #1b48a8, #1a439b);
+                    color: white;
+                    option{
+                        background: #1a439b;
+                        color: white;
+                    }
                 }
 
                 select:focus{
@@ -136,6 +142,7 @@
     flex-wrap: wrap;
     justify-content: center;
     .product-card{
+
         min-width: 271px;
         min-height: 400px;
         max-width: 300px;
@@ -187,6 +194,13 @@
             color: #2c2c2c;
             font-weight: bold;
             margin-top: 2em;
+            p{
+                text-shadow: 0 1px 1px #888888;
+                span{
+                    text-shadow: 0 0 0 #888888;
+                    font-weight: lighter;
+                }
+            }
         }
 
         .buttons-container{
