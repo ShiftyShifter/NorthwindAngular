@@ -46,27 +46,23 @@
             </li>
         </ul>
     </nav>
-
     <div class="product-card-outer">
-        <div class="product-card" *ngFor="let item of products">
-            <div class="image-container">
-                <img src="../../assets/images/{{item.imageURL}}" alt="{{item.productName}}">
-            </div>
-            <div class="descriptions-container">
-                <p>Product Name: {{item.productName}}</p>
-                <p>Price: {{item.price}}</p>
-                <p>Stock: {{item.price}}</p>
-            </div>
-            <div class="buttons-container">
-                <li>
+        <div class="product-card" *ngFor="let item of products" style="background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.7)), url({{item.imageURL}}); background-size: cover; background-position: center;">
+            <h1>{{item.productName}}</h1>
+            <div class="slide-up-container">
+                <div class="image-container">
+                    <img src="../../assets/images/{{item.imageURL}}" alt="{{item.productName}}">
+                </div>
+                <div class="descriptions-container">
+                    <p>Product Name: <span>{{item.productName | slice:0:30}}</span></p>
+                    <p>Price: <span>{{item.price}}</span></p>
+                    <p>Stock: <span>{{item.price}}</span></p>
+                </div>
+                <div class="buttons-container">
                     <button>Delete</button>
-                </li>
-                <li>
                     <button>Update</button>
-                </li>
-                <li>
                     <button>More</button>
-                </li>
+                </div>
             </div>
         </div>
     </div>
