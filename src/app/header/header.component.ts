@@ -6,14 +6,10 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @ViewChild('navSelector') closeButton: ElementRef;
+  displayStatus: boolean = false;
 
   closeNav(){
-    this.closeButton.nativeElement.style.display = "none";
-  }
-
-  openNav(){
-    this.closeButton.nativeElement.style.display = "flex";
+    this.displayStatus = !this.displayStatus;
   }
 
   constructor() {

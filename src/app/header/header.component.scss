@@ -48,9 +48,9 @@ header{
     
     ul{
         //border: 1px solid black;
-        display: none;
+        //display: none;
         flex-direction: column;
-        font-size: 3.5em;
+        font-size: 2.5em;
         gap: 50px;
         justify-content: center;
         position: fixed;
@@ -59,7 +59,8 @@ header{
         right: 0;
         width: 80%;
         height: 100vh;
-        background: rgba($color: #2e4bca, $alpha: 0.95);
+        background-image: linear-gradient(to top, #2058d1f6, #1e53c3f6, #1c4db6f6, #1b48a8f6, #1a439bf6);
+        //background: rgba($color: #364896, $alpha: 0.95);
         transition: 500ms ease;
     
         li{
@@ -80,10 +81,6 @@ header{
             top: 20px;
             right: 20px;
         }
-    }
-
-    ul:hover{
-        display: flex;
     }
 }
 
@@ -139,4 +136,12 @@ header:hover{
             margin-right: 4em;
         }
     }
+}
+
+.closeUI{
+    display: none;
+}
+
+.openUI{
+    display: flex;
 }
