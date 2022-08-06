@@ -138,11 +138,12 @@
 }
 
 .product-card-outer{
+    animation: opacityIn 1s forwards;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    .product-card{
 
+    .product-card{
         min-width: 271px;
         min-height: 400px;
         max-width: 300px;
@@ -301,5 +302,14 @@
                 }
             }
         }
+    }
+}
+
+@keyframes opacityIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }
