@@ -10,6 +10,8 @@ import { LandingComponent } from './landing/landing.component';
 import { FormsModule } from '@angular/forms';
 import { ProductsComponent } from './products/products.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './home/home.component';
+import { CarouselComponent } from './home/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { FooterComponent } from './footer/footer.component';
     LoginComponent,
     LandingComponent,
     ProductsComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

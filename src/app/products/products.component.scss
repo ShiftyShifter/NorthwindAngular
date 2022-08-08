@@ -24,7 +24,7 @@
             input{
                 border: 1px solid rgba($color: #575757, $alpha: 0.8);
                 width: 100%;
-                font-size: 1.2em;
+                font-size: 0.8em;
                 padding: 1em 0.5em;
             }
 
@@ -37,19 +37,33 @@
             button{
                 cursor: pointer;
                 width: 100%;
-                font-size: 1.2em;
+                font-size: 0.8em;
                 font-weight: bold;
                 border: 1px solid #2058d1;
                 //background: #2058d1;
                 background-image: linear-gradient(to top, #2058d1, #1e53c3, #1c4db6, #1b48a8, #1a439b);
+                &:hover{
+                    background-image: linear-gradient(to top, #1f50bb, #1b49ac, #1944a1, #174097, #163a88);
+                }
                 color: white;
                 padding: 1em 0;
             }
         }
     
         .view-container{
-            border: 1px solid crimson;
+            //border: 1px solid crimson;
+            width: 10%;
             display: none;
+            font-size: 0.8em;
+            cursor: pointer;
+            background-image: linear-gradient(to top, #135150, #155e5d, #176b6a, #197977, #1a8785);
+            &:hover{
+                background-image: linear-gradient(to top, #0f3d3c, #104948, #135857, #146160, #146b6a);
+            }
+            color: white;
+            font-weight: bold;
+            justify-content: center;
+            align-items: center;
         }
     
         .advanced-sort-container{
@@ -59,7 +73,7 @@
             background: white;
             li:first-child{
                 width: 30%;
-                font-size: 1em;
+                font-size: 0.8em;
                 text-align: center;
                 align-self: center;
             }
@@ -69,7 +83,7 @@
                 select{
                     width: 100%;
                     height: 100%;
-                    font-size: 1em;
+                    font-size: 0.8em;
                     border: 1px solid rgba($color: #575757, $alpha: 0.8);
                     background-image: linear-gradient(to top, #2058d1, #1e53c3, #1c4db6, #1b48a8, #1a439b);
                     color: white;
@@ -90,11 +104,13 @@
                 button{
                     cursor: pointer;
                     width: 100%;
-                    font-size: 1em;
+                    font-size: 0.8em;
                     font-weight: bold;
                     border: 1px solid #086618;
-                    background: #086618;
                     background-image: linear-gradient(to top, #135150, #155e5d, #176b6a, #197977, #1a8785);
+                    &:hover{
+                        background-image: linear-gradient(to top, #0f3d3c, #104948, #135857, #146160, #146b6a);
+                    }
                     color: white;
                     padding: 0.5em 0;
                 }
@@ -110,11 +126,13 @@
                 button{
                     cursor: pointer;
                     width: 100%;
-                    font-size: 1.2em;
+                    font-size: 0.8em;
                     font-weight: bold;
-                    border: 1px solid #086618;
-                    background: #086618;
-                    background-image: linear-gradient(to top, #135150, #155e5d, #176b6a, #197977, #1a8785);
+                    border: 1px solid #1443a8;
+                    background-image: linear-gradient(to top, #2058d1, #1e53c3, #1c4db6, #1b48a8, #1a439b);
+                    &:hover{
+                        background-image: linear-gradient(to top, #1f50bb, #1b49ac, #1944a1, #174097, #163a88);
+                    }
                     color: white;
                     padding: 1em 0;
                 }
@@ -124,11 +142,13 @@
                 button{
                     cursor: pointer;
                     width: 100%;
-                    font-size: 1.2em;
+                    font-size: 0.8em;
                     font-weight: bold;
-                    border: 1px solid #1443a8;
-                    background: #1443a8;
-                    background-image: linear-gradient(to top, #2058d1, #1e53c3, #1c4db6, #1b48a8, #1a439b);
+                    border: 1px solid #086618;
+                    background-image: linear-gradient(to top, #135150, #155e5d, #176b6a, #197977, #1a8785);
+                    &:hover{
+                        background-image: linear-gradient(to top, #0f3d3c, #104948, #135857, #146160, #146b6a);
+                    }
                     color: white;
                     padding: 1em 0;
                 }
@@ -137,11 +157,15 @@
     }
 }
 
+
+/* @@@@@@@ CARDS @@@@@@@@@@@ */
+
 .product-card-outer{
     animation: opacityIn 1s forwards;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 2em;
 
     .product-card{
         min-width: 271px;
@@ -166,7 +190,7 @@
         background-position: center;
         padding: 2em;
         margin: 2em 1em;
-        border-radius: 10px;
+        border-radius: 25px;
         transition: 1s ease;
 
         &:hover{
@@ -241,8 +265,7 @@
                 width: 40%;
                 input{
                     width: 100%;
-                    font-size: 1em;
-                    
+                    font-size: 0.8em;
                 }
     
                 input:focus{
@@ -251,16 +274,13 @@
     
                 button{
                     width: 100%;
-                    font-size: 1em;
+                    font-size: 0.8em;
                     
                 }
             }
 
             .view-container{
-                border: 1px solid crimson;
                 display: flex;
-                width: 10%;
-                font-size: 0.5em;
             }
 
             .advanced-sort-container{
@@ -290,14 +310,14 @@
                 li:first-child{
                     width: 70%;
                     button{
-                        font-size: 1em;
+                        font-size: 0.8em;
                     }
                 }
                 li:last-child{
                     width: 30%;
                     button{
                         width: 100%;
-                        font-size: 1em;
+                        font-size: 0.8em;
                     }
                 }
             }
