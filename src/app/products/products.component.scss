@@ -167,9 +167,7 @@
     padding: 2em;
 
     .product-card{
-        min-width: 271px;
-        min-height: 400px;
-        max-width: 300px;
+        width: 300px;
         max-height: 426px;
         position: relative;
         h1{
@@ -205,15 +203,16 @@
         }
 
         .image-container{
-            //border: 1px solid blue;
             img{
                 display: block;
                 margin: 0 auto;
                 width: 200px;
+                height: 150px;
             }
         }
 
         .descriptions-container{
+            height: 116px;
             font-size: 1.2em;
             color: #2c2c2c;
             font-weight: bold;

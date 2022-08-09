@@ -36,16 +36,16 @@
         </ul>
     </nav>
     <div class="product-card-outer">
-        <div class="product-card" *ngFor="let item of products" style="background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.7)), url({{item.imageURL}}); background-size: cover; background-position: center;">
-            <h1>{{item.productName}}</h1>
+        <div class="product-card" *ngFor="let item of products" style="background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.7)), url(http://localhost:3030/api/products/images/{{item.id}}.jpg); background-size: cover; background-position: center;">
+            <h1>{{item.name}}</h1>
             <div class="slide-up-container">
                 <div class="image-container">
-                    <img src="../../assets/images/{{item.imageURL}}" alt="{{item.productName}}">
+                    <img src="http://localhost:3030/api/products/images/{{item.id}}.jpg" alt="{{item.name}}">
                 </div>
                 <div class="descriptions-container">
-                    <p>Product Name: <span>{{item.productName | slice:0:30}}</span></p>
-                    <p>Price: <span>{{item.price}}</span></p>
-                    <p>Stock: <span>{{item.price}}</span></p>
+                    <p>Product Name: <span>{{item.name | slice:0:30}}</span></p>
+                    <p>Price: <span>{{item.price}}$</span></p>
+                    <p>Stock: <span>{{item.stock}}</span></p>
                 </div>
                 <div class="buttons-container">
                     <button>Delete</button>
@@ -71,4 +71,4 @@
     </div>
 </div> -->
 
-{{ console.log(products[0].categoryId)}}
+<!-- {{ console.log(products[0].name)}} -->
