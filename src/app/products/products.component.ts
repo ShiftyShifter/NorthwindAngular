@@ -10,10 +10,9 @@ import { TestProductsService } from '../services/test-products.service';
   styleUrls: ['./products.component.scss']
 })
 export class ProductsComponent implements OnInit {
-  /* products: IProducts[];
-  productsList: ProductsList; */
   console = console;
   products: ITestProducts[];
+  displayAddUI: boolean = false;
   
 
   constructor(private _productService: TestProductsService) {
@@ -23,6 +22,11 @@ export class ProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this._productService.getCategories().subscribe(data => this.products = data );
+  }
+
+  openAddUI(){
+    this.displayAddUI = !this.displayAddUI;
+    this.console.log(this.displayAddUI);
   }
 
 }

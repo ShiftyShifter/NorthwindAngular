@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home.component';
 import { CarouselComponent } from './home/carousel/carousel.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { EmployeeComponent } from './employee/employee.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     HomeComponent,
     CarouselComponent,
     CategoriesComponent,
+    EmployeeComponent,
   ],
   imports: [
     BrowserModule,

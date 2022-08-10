@@ -31,7 +31,7 @@
                 <button>SAVE SEARCH</button>
             </li>
             <li>
-                <button>ADD</button>
+                <button (click)="openAddUI()">ADD</button>
             </li>
         </ul>
     </nav>
@@ -55,6 +55,30 @@
             </div>
         </div>
     </div>
+</div>
+
+<div class="add-popup-container" [ngStyle]="{'display':displayAddUI === false ? 'none' : 'flex' }">
+    <form action="#">
+        <div class="image-container">
+            <img src="../../assets/images/add-product.png" alt="a guy adding products">
+        </div>
+        <div class="form-name">
+            <label for="text">Product Name</label>
+            <input type="text">
+        </div>
+        <div class="form-price">
+            <label for="text">Price</label>
+            <input type="number">
+        </div>
+        <div class="form-stock">
+            <label for="text">Stock</label>
+            <input type="number">
+        </div>
+        <div class="buttons">
+            <button (click)="openAddUI()">Back</button>
+            <button>Add</button>
+        </div>
+    </form>
 </div>
 
 <!-- <div class="product-card-outer">
