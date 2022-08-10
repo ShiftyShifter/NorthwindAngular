@@ -1,4 +1,21 @@
-<p *ngFor="let product of products">
-{{product.name}} 8=======)
-{{product.price}}
-</p>
+<div class="categories-outer">
+    <div class="categories-card-outer">
+        <div class="category-card" *ngFor="let category of categories" style="background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.7)), url(http://localhost:3030/api/products/images/{{category.id}}.jpg); background-size: cover; background-position: center;">
+            <h1>{{category.name}}</h1>
+            <div class="slide-up-container">
+                <div class="image-container">
+                    <img src="http://localhost:3030/api/products/images/{{category.id}}.jpg" alt="{{category.name}}">
+                </div>
+                <div class="descriptions-container">
+                    <p>Category Name: <span>{{category.name | slice:0:30}}</span></p>
+                    <p>Description: <span>{{category.description}}</span></p>
+                </div>
+                <div class="buttons-container">
+                    <button>Delete</button>
+                    <button>Update</button>
+                    <button>More</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

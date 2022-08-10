@@ -1,5 +1,8 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { TestProductsService } from '../services/test-products.service';
+import { ICategory } from '../models/ICategory';
+import { CategoryService } from '../services/category.service';
+import { LoginService } from '../services/login.service';
 
 
 @Component({
@@ -8,12 +11,23 @@ import { TestProductsService } from '../services/test-products.service';
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
-  public products = [];
+  categories: ICategory[] = [];
 
-  constructor(private _productService: TestProductsService) { }
-
-  ngOnInit(): void {
-    this._productService.getCategories().subscribe(data => this.products = data );
+  constructor(private categoryService: CategoryService, private loginService: LoginService) {
+    this.loginService.loginServer().subscribe(
+      result => { localStorage.setItem('id_token', result.toString()) }
+    );
   }
 
+  ngOnInit(): void {
+    /* this.loginService.loginServer().subscribe(
+      data => console.log(data)
+    ); */
+
+     this.categoryService.getCategories().subscribe(
+      data => { this.categories = data; }
+    );
+  }
 }
+
+
