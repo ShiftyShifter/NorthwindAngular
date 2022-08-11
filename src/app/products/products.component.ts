@@ -13,7 +13,14 @@ export class ProductsComponent implements OnInit {
   console = console;
   products: ITestProducts[];
   displayAddUI: boolean = false;
-  
+  displayInfoUI: boolean = false;
+
+  model: any = {
+    name: '',
+    price: 0,
+    stock: 0
+  }
+  id: any;
 
   constructor(private _productService: TestProductsService) {
     /* this.productsList = new ProductsList();
@@ -24,9 +31,25 @@ export class ProductsComponent implements OnInit {
     this._productService.getCategories().subscribe(data => this.products = data );
   }
 
-  openAddUI(){
+  toggleAddUI(){
     this.displayAddUI = !this.displayAddUI;
-    this.console.log(this.displayAddUI);
+  }
+
+  toggleInfoUI(){
+    this.displayInfoUI = !this.displayInfoUI;
+  }
+
+  AddProduct(){
+    this._productService.postProduct(this.model).subscribe();
+    this.displayAddUI = !this.displayAddUI;
+  }
+
+  RemoveProduct(id){
+    this._productService.deleteProduct(id).subscribe();
+  }
+
+  UpdateProduct(id, product: ITestProducts){
+    this._productService.putProduct(id, product).subscribe();
   }
 
 }

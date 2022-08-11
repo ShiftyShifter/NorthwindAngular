@@ -12,7 +12,7 @@
             CHANGE VIEW
         </ul>
         <ul class="advanced-sort-container">
-            <li>Advanced:</li>  
+            <li>Advanced:</li>
             <li>
                 <select name="sort" id="sort">
                     <option value="ascending">Price (Ascending)</option>
@@ -31,12 +31,13 @@
                 <button>SAVE SEARCH</button>
             </li>
             <li>
-                <button (click)="openAddUI()">ADD</button>
+                <button (click)="toggleAddUI()">ADD</button>
             </li>
         </ul>
     </nav>
     <div class="product-card-outer">
-        <div class="product-card" *ngFor="let item of products" style="background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.7)), url(http://localhost:3030/api/products/images/{{item.id}}.jpg); background-size: cover; background-position: center;">
+        <div class="product-card" *ngFor="let item of products"
+            style="background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.7)), url(http://localhost:3030/api/products/images/{{item.id}}.jpg); background-size: cover; background-position: center;">
             <h1>{{item.name}}</h1>
             <div class="slide-up-container">
                 <div class="image-container">
@@ -48,9 +49,9 @@
                     <p>Stock: <span>{{item.stock}}</span></p>
                 </div>
                 <div class="buttons-container">
-                    <button>Delete</button>
+                    <button (click)="RemoveProduct(item.id)">Delete</button>
                     <button>Update</button>
-                    <button>More</button>
+                    <button (click)="toggleInfoUI()">More</button>
                 </div>
             </div>
         </div>
@@ -58,27 +59,33 @@
 </div>
 
 <div class="add-popup-container" [ngStyle]="{'display':displayAddUI === false ? 'none' : 'flex' }">
-    <form action="#">
+    <form #form="ngForm">
         <div class="image-container">
             <img src="../../assets/images/add-product.png" alt="a guy adding products">
         </div>
-        <div class="form-name">
-            <label for="text">Product Name</label>
-            <input type="text">
-        </div>
-        <div class="form-price">
-            <label for="text">Price</label>
-            <input type="number">
-        </div>
-        <div class="form-stock">
-            <label for="text">Stock</label>
-            <input type="number">
-        </div>
-        <div class="buttons">
-            <button (click)="openAddUI()">Back</button>
-            <button>Add</button>
+        <div class="popup-login">
+            <div class="form-name">
+                <label for="text">Product Name</label>
+                <input [(ngModel)]="model.name" name="name" type="text">
+            </div>
+            <div class="form-price">
+                <label for="text">Price</label>
+                <input [(ngModel)]="model.price" name="price"  type="number">
+            </div>
+            <div class="form-stock">
+                <label for="text">Stock</label>
+                <input [(ngModel)]="model.stock" name="stock" type="number">
+            </div>
+            <div class="buttons">
+                <button (click)="toggleAddUI()">Back</button>
+                <button (click)="AddProduct()">Add</button>
+            </div>
         </div>
     </form>
+</div>
+
+<div class="info-popup-container" [ngStyle]="{'display':displayInfoUI === false ? 'none' : 'flex' }">
+
 </div>
 
 <!-- <div class="product-card-outer">

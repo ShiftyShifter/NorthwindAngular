@@ -1,0 +1,123 @@
+.employees-card-outer {
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .employee-card {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        background: white;
+        border-radius: 10px;
+        padding: 1.5em;
+        margin: 2em 1em;
+        position: relative;
+
+        
+
+        .slideup-top {
+            display: flex;
+            flex-direction: column;
+            img {
+                width: 200px;
+                display: block;
+                margin: auto;
+                border-radius: 50%;
+                border: 2px solid #1a439b;
+            }
+
+            .badge-fullname {
+                margin-top: 0.8em;
+
+                .badge {
+                    color: #ffffff;
+                    text-align: center;
+                    font-size: 1.3em;
+                    font-weight: bold;
+                    background-image: linear-gradient(to top, #2058d1, #1e53c3, #1c4db6, #1b48a8, #1a439b);
+                    border-radius: 10px;
+                    position: relative;
+                }
+
+                .first-name-container {
+                    margin-top: 1em;
+                    font-size: 1.1em;
+
+                    .first-name {
+                        font-weight: bold;
+                        color: #24155c;
+                    }
+
+                    p:last-child {
+                        transform: translateY(-5px);
+                    }
+                }
+
+                .last-name-container {
+                    margin-top: 0.2em;
+                    font-size: 1.1em;
+
+                    .last-name {
+                        font-weight: bold;
+                        color: #24155c;
+                    }
+
+                    p:last-child {
+                        transform: translateY(-5px);
+                    }
+                }
+            }
+        }
+
+        .slideup-middle {
+            p {
+                font-weight: bold;
+                color: #24155c;
+
+                span {
+                    font-weight: lighter;
+                }
+            }
+        }
+
+        .slideup-bottom {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 1em;
+
+            button {
+                cursor: pointer;
+                background-image: linear-gradient(to top, #2058d1, #1e53c3, #1c4db6, #1b48a8, #1a439b);
+                color: white;
+                font-weight: bold;
+                border: 0;
+                border-radius: 5px;
+                padding: 0.5em 1em;
+                width: 80px;
+                margin: 0 0.8em;
+            }
+        }
+    }
+}
+
+.add-card{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5em;
+    margin: 2em 1em;
+    width: 250px;
+    height: 454px;
+    background: #1a439b;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    transition: all 300ms linear;
+
+    &:hover{
+        background: #113279;
+    }
+}

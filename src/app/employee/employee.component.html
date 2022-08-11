@@ -1,1 +1,32 @@
-<p>employee works!</p>
+<div class="employees-card-outer">
+    <div class="employee-card" *ngFor="let item of employees">
+        <div class="slide-up-container">
+            <div class="slideup-top">
+                <img src="http://localhost:3030/api/employees/images/{{item.id}}.jpg" alt="{{item.firstName + item.lastName}}">
+                <div class="badge-fullname">
+                    <div class="badge">{{item.title}}</div>
+                    <div class="fullname">
+                        <div class="first-name-container">
+                            <p class="first-name">First Name:</p>
+                            <p>{{item.firstName}}</p>
+                        </div>
+                        <div class="last-name-container">
+                            <p class="last-name">Last Name:</p>
+                            <p>{{item.lastName}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slideup-middle">
+                <p>Country/City: <span>{{item.country + "/" + item.city}}</span></p>
+                <p>Birth Date: <span>{{item.birthDate}}</span></p>
+            </div>
+            <div class="slideup-bottom">
+                <button>Delete</button>
+                <button>Update</button>
+                <button>More</button>
+            </div>
+        </div>
+    </div>
+    <div class="add-card">Add New</div>
+</div>
