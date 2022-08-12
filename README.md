@@ -1,6 +1,9 @@
-# Alperen Üstün Techcareer Angular Bootcamp Task
+# Alperen Üstün Techcareer Angular Bootcamp Project
 
-## Demo Video
-https://youtu.be/ZuNFU-ZAH2s
+## PC View
+https://youtu.be/jCrj8V9HMX0
+
+## Mobile View
+https://youtu.be/O38WnQUu_L0
 
 
