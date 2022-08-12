@@ -51,7 +51,7 @@
                 <div class="buttons-container">
                     <button (click)="RemoveProduct(item.id)">Delete</button>
                     <button>Update</button>
-                    <button (click)="toggleInfoUI()">More</button>
+                    <button (click)="toggleInfoUI(item)">More</button>
                 </div>
             </div>
         </div>
@@ -84,8 +84,15 @@
     </form>
 </div>
 
-<div class="info-popup-container" [ngStyle]="{'display':displayInfoUI === false ? 'none' : 'flex' }">
-
+<div (click)="toggleInfoUI2()" class="info-popup-container" [ngStyle]="{'display':displayInfoUI === false ? 'none' : 'flex' }">
+    <div class="info-card">
+        <div class="image-container"></div>
+        <div class="text-container">
+            <h2>{{model.name}}</h2>
+            <p>Price: <span>{{model.price}}</span><p>
+            <p>Stock: <span>{{model.stock}}</span><p>
+        </div>
+    </div>
 </div>
 
 <!-- <div class="product-card-outer">

@@ -1,0 +1,35 @@
+.contact-card-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 800px;
+    .contact-card{
+        //border: 1px solid green;
+        background: white;
+        padding: 1.5em;
+        border-radius: 10px;
+        margin: 2em;
+        width: 400px;
+        height: 150px;
+        p{
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #1b1c7c;
+            span{
+                font-weight: lighter;
+            }
+        }
+    }
+    .phone-images{
+        margin-top: 10px;
+        .phone{
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            background: url('https://i.pinimg.com/736x/00/3d/ff/003dfff29dc38294446b0a306d0e5079.jpg');
+            background-position: center;
+            background-size: cover;
+        }
+    }
+}

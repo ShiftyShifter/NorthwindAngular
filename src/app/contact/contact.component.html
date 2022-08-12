@@ -1,0 +1,12 @@
+<div class="contact-card-container">
+    <div *ngFor="let item of contacts" class="contact-card">
+        <p>Name: <span>{{item.name}}</span></p>
+        <p>Message: <span>{{item.message}}</span></p>
+        <p>Email: <span>{{item.email}}</span></p>
+        <p>Phone: <span>{{item.phone}}</span></p>
+        <div class="phone-images">
+            <a href="tel:{{item.phone}}"><div *ngIf="item.phone.length == 10" class="phone"></div></a>
+            
+        </div>
+    </div>
+</div>

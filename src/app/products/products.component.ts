@@ -22,7 +22,6 @@ export class ProductsComponent implements OnInit {
     stock: 0
   }
   id: any;
-
   constructor(private _productService: TestProductsService) {
     /* this.productsList = new ProductsList();
     this.products = this.productsList.getProducts(); */
@@ -36,7 +35,11 @@ export class ProductsComponent implements OnInit {
     this.displayAddUI = !this.displayAddUI;
   }
 
-  toggleInfoUI(){
+  toggleInfoUI(item:any){
+    this.displayInfoUI = !this.displayInfoUI;
+    this.model = item; 
+  }
+  toggleInfoUI2(){
     this.displayInfoUI = !this.displayInfoUI;
   }
 

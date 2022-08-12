@@ -1,3 +1,10 @@
+.backshadow{
+    position: fixed;
+    width: 100vw;
+    height: 100vw;
+    background: blue;
+    z-index: 1;
+}
 .hero-page{
     //border: 2px solid red;
     background: linear-gradient(

@@ -20,6 +20,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { OrderModule } from 'ngx-order-pipe';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { OrderModule } from 'ngx-order-pipe';
     CarouselComponent,
     CategoriesComponent,
     EmployeeComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
