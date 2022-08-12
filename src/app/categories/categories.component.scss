@@ -115,3 +115,100 @@
         }
     }
 }
+
+
+.add-popup-container {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: rgba($color: #000000, $alpha: 0.8);
+    top: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+
+    form {
+        //border: 1px solid brown;
+        background-image: radial-gradient(circle 321px at 8.3% 75.7%, rgba(209, 247, 241, 1) 0%, rgba(249, 213, 213, 1) 81%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 2em;
+        border-radius: 20px;
+        animation: slideIn 1s ease-in-out;
+
+        .popup-login {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        div {
+            //border: 1px solid red;
+            margin: 1em 0;
+
+            label {
+                display: block;
+                color: #1c1466;
+                font-size: 1.4em;
+                font-weight: bold;
+            }
+
+            input {
+                font-size: 1.2em;
+                padding: 0.5em 1em;
+                display: block;
+                border-radius: 10px;
+                border: 1px solid rgba($color: #d3acff, $alpha: 0.4);
+                background: white;
+                color: #191041;
+            }
+
+            input:focus {
+                outline: none;
+            }
+        }
+
+        .image-container {
+            width: 150px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-between;
+
+            width: 100%;
+
+            button {
+                cursor: pointer;
+                width: 100px;
+                background: #32256b;
+                font-size: 1.5em;
+                border: 0;
+                border-radius: 10px;
+                padding: 0.2em 0.5em;
+                font-weight: bold;
+                color: rgb(255, 255, 255);
+                margin: 0 0.5em;
+                box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+                &:hover {
+                    background: #251b53;
+                }
+
+                &:active {
+                    transform: translateY(2px);
+                    box-shadow: 0 0 1px #000000;
+                }
+            }
+        }
+    }
+}

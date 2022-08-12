@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'categories', component: CategoriesComponent},
   {path: 'employees', component: EmployeeComponent},
-  {path: '', redirectTo: 'landingComponent', pathMatch: 'full'}
+  {path: '', redirectTo: 'landing', pathMatch: 'full'}
 ];
 
 @NgModule({

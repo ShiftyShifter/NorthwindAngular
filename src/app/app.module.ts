@@ -18,6 +18,8 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
 import { EmployeeComponent } from './employee/employee.component';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { OrderModule } from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    Ng2SearchPipeModule,
+    OrderModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

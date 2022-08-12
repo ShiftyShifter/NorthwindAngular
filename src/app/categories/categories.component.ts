@@ -12,6 +12,12 @@ import { LoginService } from '../services/login.service';
 })
 export class CategoriesComponent implements OnInit {
   categories: ICategory[] = [];
+  displayAddUI: boolean = false;
+
+  model: any = {
+    name: '',
+    description: ''
+  }
 
   constructor(private categoryService: CategoryService, private loginService: LoginService) {
     // this.loginService.loginServer().subscribe(
@@ -23,11 +29,25 @@ export class CategoriesComponent implements OnInit {
     /* this.loginService.loginServer().subscribe(
       data => console.log(data)
     ); */
-
      this.categoryService.getCategories().subscribe(
       data => { this.categories = data; }
     );
   }
+
+  toggleAddUI(){
+    this.displayAddUI = !this.displayAddUI;
+    console.log(this.displayAddUI);
+  }
+
+  AddCategory(){
+    this.categoryService.postCategory(this.model).subscribe();
+    this.displayAddUI = !this.displayAddUI;
+  }
+
+  RemoveCategory(id){
+    this.categoryService.deleteCategory(id).subscribe();
+  }
+
 }
 
 

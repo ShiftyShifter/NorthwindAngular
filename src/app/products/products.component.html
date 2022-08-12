@@ -2,7 +2,7 @@
     <nav>
         <ul class="search-container">
             <li>
-                <input type="text" placeholder="looking for...">
+                <input type="text" name="search" [(ngModel)]="searchText" placeholder="looking for...">
             </li>
             <li>
                 <button>SEARCH</button>
@@ -36,7 +36,7 @@
         </ul>
     </nav>
     <div class="product-card-outer">
-        <div class="product-card" *ngFor="let item of products"
+        <div class="product-card" *ngFor="let item of products | filter:searchText" 
             style="background: linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.3),rgba(0, 0, 0, 0.7)), url(http://localhost:3030/api/products/images/{{item.id}}.jpg); background-size: cover; background-position: center;">
             <h1>{{item.name}}</h1>
             <div class="slide-up-container">

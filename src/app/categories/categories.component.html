@@ -11,14 +11,36 @@
                     <p>Description: <span>{{category.description}}</span></p>
                 </div>
                 <div class="buttons-container">
-                    <button>Delete</button>
+                    <button (click)="RemoveCategory(category.id)">Delete</button>
                     <button>Update</button>
                     <button>More</button>
                 </div>
             </div>
         </div>
-        <div class="add-btn">
+        <div (click)="toggleAddUI()" class="add-btn">
             <h1>ADD NEW</h1>
         </div>
     </div>
+</div>
+
+<div class="add-popup-container" [ngStyle]="{'display':displayAddUI === false ? 'none' : 'flex' }">
+    <form #form="ngForm">
+        <div class="image-container">
+            <img src="../../assets/images/add-product.png" alt="a guy adding products">
+        </div>
+        <div class="popup-login">
+            <div class="form-name">
+                <label for="text">Category Name</label>
+                <input [(ngModel)]="model.name" name="name" type="text">
+            </div>
+            <div class="form-price">
+                <label for="text">Description</label>
+                <input [(ngModel)]="model.description" name="description"  type="text">
+            </div>
+            <div class="buttons">
+                <button (click)="toggleAddUI()">Back</button>
+                <button (click)="AddCategory()">Add</button>
+            </div>
+        </div>
+    </form>
 </div>

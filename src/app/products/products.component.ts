@@ -14,6 +14,7 @@ export class ProductsComponent implements OnInit {
   products: ITestProducts[];
   displayAddUI: boolean = false;
   displayInfoUI: boolean = false;
+  searchText: any;
 
   model: any = {
     name: '',
