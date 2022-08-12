@@ -1,6 +1,6 @@
 # Alperen Üstün Techcareer Angular Bootcamp Project
 
-## PC View
+## Widescreen View
 https://youtu.be/jCrj8V9HMX0
 
 ## Mobile View
