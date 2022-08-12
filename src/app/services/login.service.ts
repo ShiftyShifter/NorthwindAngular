@@ -11,7 +11,7 @@ export class LoginService {
   constructor(private http: HttpClient) { 
   }
 
-  loginServer(){
-    return this.http.post(this.url, {"username": "alperendeneme", "password": "123456"})
+  loginServer(username: string, password:string){
+    return this.http.post(this.url, {"username": username, "password": password})
   }
 }

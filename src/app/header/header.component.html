@@ -15,6 +15,10 @@
         <li routerLink="/employees">Employees</li>
         <li>Contact</li>
         <li routerLink="/login">Login</li>
+        <select class="custom-select" #mySelect (change)="changeLang(mySelect.value)" style="display: none;">
+          <option value="en" [selected]="lang == 'en'">English</option>
+          <option value="tr" [selected]="lang == 'tr'">Türkçe</option>
+        </select>
       </ul>
     </nav>
   </header>

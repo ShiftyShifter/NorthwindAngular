@@ -14,9 +14,9 @@ export class CategoriesComponent implements OnInit {
   categories: ICategory[] = [];
 
   constructor(private categoryService: CategoryService, private loginService: LoginService) {
-    this.loginService.loginServer().subscribe(
-      result => { localStorage.setItem('id_token', result.toString()) }
-    );
+    // this.loginService.loginServer().subscribe(
+    //   result => { localStorage.setItem('id_token', result.toString()) }
+    // );
   }
 
   ngOnInit(): void {

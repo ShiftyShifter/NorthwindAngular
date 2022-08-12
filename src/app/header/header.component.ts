@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
@@ -7,16 +8,22 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 })
 export class HeaderComponent implements OnInit {
   displayStatus: boolean = false;
+  lang;
 
-  closeNav(){
+  closeNav() {
     this.displayStatus = !this.displayStatus;
   }
 
   constructor() {
-
-   }
+    
+  }
 
   ngOnInit(): void {
+    this.lang = localStorage.getItem('lang') || 'en';
+  }
 
+  changeLang(lang){
+    localStorage.setItem('lang', lang);
+    window.location.reload();
   }
 }

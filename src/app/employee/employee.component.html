@@ -2,9 +2,9 @@
     <div class="employee-card" *ngFor="let item of employees">
         <div class="slide-up-container">
             <div class="slideup-top">
-                <img src="http://localhost:3030/api/employees/images/{{item.id}}.jpg" alt="{{item.firstName + item.lastName}}">
+                <img src="http://localhost:3030/api/employees/images/{{item.id}}.jpg" alt="{{item.firstName + item.lastName}}"> 
                 <div class="badge-fullname">
-                    <div class="badge">{{item.title}}</div>
+                    <div class="badge" [ngStyle]="{'background':item.title === 'Sales Representative' ? '#1a439b' : '#400e57'}">{{item.title}}</div>
                     <div class="fullname">
                         <div class="first-name-container">
                             <p class="first-name">First Name:</p>

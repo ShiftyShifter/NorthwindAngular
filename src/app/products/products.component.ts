@@ -50,6 +50,8 @@ export class ProductsComponent implements OnInit {
 
   UpdateProduct(id, product: ITestProducts){
     this._productService.putProduct(id, product).subscribe();
+    // this._productService.getCategories().subscribe(newData =>
+    //   this.products = newData);
   }
 
 }
