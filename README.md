@@ -2,8 +2,8 @@
 
 on the console type
 
-    -> npm i
-    -> northwind
+    npm i
+    northwind
     
 #### Widescreen View
 https://youtu.be/jCrj8V9HMX0
