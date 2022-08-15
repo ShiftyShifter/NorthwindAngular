@@ -97,21 +97,19 @@
 
     .add-btn {
         cursor: pointer;
-        border: 1px solid #1443a8;
-        background-image: linear-gradient(to top, #2058d1, #1e53c3, #1c4db6, #1b48a8, #1a439b);
+        border: 0;
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        border-radius: 30px;
+        padding: 1em 2em;
+        text-transform: uppercase;
         color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 2em;
-        width: 300px;
-        height: 375px;
-        margin: 2em 1em;
-        border-radius: 25px;
-        transition: 500ms ease;
-        &:hover{
-            border: 1px solid #086618;
-            background-image: linear-gradient(to top, #135150, #155e5d, #176b6a, #197977, #1a8785);
+        background: #1b48a8;
+        font-weight: bold;
+
+        &:hover {
+            background: #1a439b;
         }
     }
 }

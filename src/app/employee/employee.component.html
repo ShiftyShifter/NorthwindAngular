@@ -4,7 +4,7 @@
             <div class="slideup-top">
                 <img src="http://localhost:3030/api/employees/images/{{item.id}}.jpg" alt="{{item.firstName + item.lastName}}"> 
                 <div class="badge-fullname">
-                    <div class="badge" [ngStyle]="{'background':item.title === 'Sales Representative' ? '#1a439b' : '#400e57'}">{{item.title}}</div>
+                    <div class="badge" [ngStyle]="{'background':item.title === 'Sales Representative' ? '#1a439b' : '#4D146A'}">{{item.title}}</div>
                     <div class="fullname">
                         <div class="first-name-container">
                             <p class="first-name">First Name:</p>
@@ -28,5 +28,46 @@
             </div>
         </div>
     </div>
-    <div class="add-card">Add New</div>
+    <button (click)="toggleAddUI()" class="add-btn">Add</button>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#e3ebfc" fill-opacity="1" d="M0,128L48,112C96,96,192,64,288,90.7C384,117,480,203,576,208C672,213,768,139,864,96C960,53,1056,43,1152,48C1248,53,1344,75,1392,85.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+      </svg>
+</div>
+
+<div class="add-popup-container" [ngStyle]="{'display':displayAddUI === false ? 'none' : 'flex' }">
+    <form #form="ngForm">
+        <div class="image-container">
+            <img src="../../assets/images/add-employee.png" alt="employees">
+        </div>
+        <div class="popup-login">
+            <div class="form-firstName">
+                <label for="text">First Name</label>
+                <input [(ngModel)]="model.firstName" name="firstName" type="text">
+            </div>
+            <div class="form-lastName">
+                <label for="text">Last Name</label>
+                <input [(ngModel)]="model.lastName" name="lastName"  type="text">
+            </div>
+            <div class="form-title">
+                <label for="text">Title</label>
+                <input [(ngModel)]="model.title" name="title" type="text">
+            </div>
+            <div class="form-country">
+                <label for="text">Country</label>
+                <input [(ngModel)]="model.country" name="country" type="text">
+            </div>
+            <div class="form-city">
+                <label for="text">City</label>
+                <input [(ngModel)]="model.city" name="city" type="text">
+            </div>
+            <div class="form-birthDate">
+                <label for="text">City</label>
+                <input [(ngModel)]="model.birthDate" name="birthDate" type="text">
+            </div>
+            <div class="buttons">
+                <button (click)="toggleAddUI()">Back</button>
+                <button>Add</button>
+            </div>
+        </div>
+    </form>
 </div>

@@ -4,9 +4,11 @@
     align-items: center;
     flex-wrap: wrap;
     min-height: 800px;
+    position: relative;
     .contact-card{
         //border: 1px solid green;
         background: white;
+        //background: #f2f2ff;
         padding: 1.5em;
         border-radius: 10px;
         margin: 2em;
@@ -32,4 +34,10 @@
             background-size: cover;
         }
     }
+}
+
+svg{
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
 }

@@ -9,6 +9,17 @@ import { EmployeesService } from '../services/employees.service';
 })
 export class EmployeeComponent implements OnInit {
   employees: IEmployee[];
+  displayAddUI: boolean = false;
+  searchText: any;
+
+  model: any = {
+    firstName: '',
+    lastName: 0,
+    title: '',
+    country: '',
+    city: '',
+    birthDate: ''
+  }
 
   constructor(private employeeService: EmployeesService) { }
 
@@ -16,6 +27,10 @@ export class EmployeeComponent implements OnInit {
     this.employeeService.getEmployees().subscribe(
       data => this.employees = data
     );
+  }
+
+  toggleAddUI(){
+    this.displayAddUI = !this.displayAddUI;
   }
 
 }
