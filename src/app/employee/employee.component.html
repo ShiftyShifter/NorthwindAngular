@@ -22,9 +22,8 @@
                 <p>Birth Date: <span>{{item.birthDate}}</span></p>
             </div>
             <div class="slideup-bottom">
-                <button>Delete</button>
+                <button (click)="RemoveEmployee(item.id)">Delete</button>
                 <button>Update</button>
-                <button>More</button>
             </div>
         </div>
     </div>
@@ -34,7 +33,7 @@
       </svg>
 </div>
 
-<div class="add-popup-container" [ngStyle]="{'display':displayAddUI === false ? 'none' : 'flex' }">
+<div class="add-popup-container" [ngStyle]="{'display':displayAddUI === false ?'none' : 'flex' }">
     <form #form="ngForm">
         <div class="image-container">
             <img src="../../assets/images/add-employee.png" alt="employees">
@@ -61,13 +60,25 @@
                 <input [(ngModel)]="model.city" name="city" type="text">
             </div>
             <div class="form-birthDate">
-                <label for="text">City</label>
+                <label for="text">Birthdate</label>
                 <input [(ngModel)]="model.birthDate" name="birthDate" type="text">
             </div>
             <div class="buttons">
                 <button (click)="toggleAddUI()">Back</button>
-                <button>Add</button>
+                <button (click)="AddEmployee()">Add</button>
             </div>
         </div>
     </form>
+</div>
+
+<div *ngIf="displayDeletePopup" class="info-popup-container" style="display: flex; background: rgba(0, 0, 0, 0.2);">
+    <div class="deleted">
+        Succesfully deleted!
+    </div>
+</div>
+
+<div *ngIf="displayAddPopup" class="info-popup-container" style="display: flex; background: rgba(0, 0, 0, 0.2);">
+    <div class="added">
+        Succesfully added!
+    </div>
 </div>

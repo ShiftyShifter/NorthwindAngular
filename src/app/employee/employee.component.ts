@@ -10,6 +10,8 @@ import { EmployeesService } from '../services/employees.service';
 export class EmployeeComponent implements OnInit {
   employees: IEmployee[];
   displayAddUI: boolean = false;
+  displayDeletePopup: boolean = false;
+  displayAddPopup: boolean = false;
   searchText: any;
 
   model: any = {
@@ -31,6 +33,36 @@ export class EmployeeComponent implements OnInit {
 
   toggleAddUI(){
     this.displayAddUI = !this.displayAddUI;
+  }
+
+  AddEmployee(){
+    this.employeeService.postEmployee(this.model).subscribe(
+      {
+        next: (data) =>{
+          console.log(data);
+        }
+      }
+    );
+    setTimeout(() => {
+      this.ngOnInit()
+    }, 1000)
+    this.displayAddUI = !this.displayAddUI;
+    this.employeeService.getEmployees().subscribe(data => this.employees = data );
+    this.displayAddPopup = !this.displayAddPopup;
+    setTimeout(() => {
+      this.displayAddPopup = !this.displayAddPopup;
+    }, 1500)
+  }
+
+  RemoveEmployee(id){
+    this.employeeService.deleteEmployee(id).subscribe();
+    setTimeout(() => {
+      this.ngOnInit()
+    }, 300)
+    this.displayDeletePopup = !this.displayDeletePopup;
+    setTimeout(() => {
+      this.displayDeletePopup = !this.displayDeletePopup;
+    }, 1500)
   }
 
 }

@@ -14,6 +14,8 @@ export class ProductsComponent implements OnInit {
   products: ITestProducts[];
   displayAddUI: boolean = false;
   displayInfoUI: boolean = false;
+  displayDeletePopup: boolean = false;
+  displayAddPopup: boolean = false;
   searchText: any;
 
   model: any = {
@@ -44,12 +46,33 @@ export class ProductsComponent implements OnInit {
   }
 
   AddProduct(){
-    this._productService.postProduct(this.model).subscribe();
+    this._productService.postProduct(this.model).subscribe(
+      {
+        next: (data) =>{
+          this.console.log(data);
+        }
+      }
+    );
+    setTimeout(() => {
+      this.ngOnInit()
+    }, 1000)
     this.displayAddUI = !this.displayAddUI;
+    this._productService.getCategories().subscribe(data => this.products = data );
+    this.displayAddPopup = !this.displayAddPopup;
+    setTimeout(() => {
+      this.displayAddPopup = !this.displayAddPopup;
+    }, 1500)
   }
 
   RemoveProduct(id){
     this._productService.deleteProduct(id).subscribe();
+    setTimeout(() => {
+      this.ngOnInit()
+    }, 300)
+    this.displayDeletePopup = !this.displayDeletePopup;
+    setTimeout(() => {
+      this.displayDeletePopup = !this.displayDeletePopup;
+    }, 1500)
   }
 
   UpdateProduct(id, product: ITestProducts){

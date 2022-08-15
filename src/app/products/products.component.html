@@ -95,6 +95,18 @@
     </div>
 </div>
 
+<div *ngIf="displayDeletePopup" class="info-popup-container" style="display: flex; background: rgba(0, 0, 0, 0.2);">
+    <div class="deleted">
+        Succesfully deleted!
+    </div>
+</div>
+
+<div *ngIf="displayAddPopup" class="info-popup-container" style="display: flex; background: rgba(0, 0, 0, 0.2);">
+    <div class="added">
+        Succesfully added!
+    </div>
+</div>
+
 <!-- <div class="product-card-outer">
     <div class="product-card" *ngFor="let item of products">
         <div class="discount" *ngIf="item.isDiscounted == true">-{{item.discountPercentage}}%</div>
