@@ -2,7 +2,7 @@
 
 on the terminal console type npm install to install packages.
 
-    npm i
+    npm install
     
 install northwind backend globally on your computer
 
