@@ -3,6 +3,7 @@
 on the console type
 
     npm i
+    
     northwind
     
 #### Widescreen View
