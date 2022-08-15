@@ -4,7 +4,11 @@ on the terminal console type npm install to install packages.
 
     npm i
     
-install and run northwind api in your local port
+install northwind backend globally on your computer
+
+    npm i -g northwind-back-end  
+    
+run northwind in your local port
      
      northwind
     
