@@ -1,9 +1,9 @@
 <div class="contact-card-container">
     <div *ngFor="let item of contacts" class="contact-card">
-        <p>Name: <span>{{item.name}}</span></p>
-        <p>Message: <span>{{item.message}}</span></p>
-        <p>Email: <span>{{item.email}}</span></p>
-        <p>Phone: <span>{{item.phone}}</span></p>
+        <p>{{language.name}}: <span>{{item.name}}</span></p>
+        <p>{{language.message}}: <span>{{item.message}}</span></p>
+        <p>{{language.email}}: <span>{{item.email}}</span></p>
+        <p>{{language.phone}}: <span>{{item.phone | slice:0:25}} </span></p>
         <div class="phone-images">
             <a href="tel:{{item.phone}}"><div *ngIf="item.phone.length == 10" class="phone"></div></a>
             
