@@ -38,7 +38,7 @@
             }
 
             button {
-                cursor: pointer;
+                //cursor: pointer;
                 width: 100%;
                 font-size: 0.8em;
                 font-weight: bold;
@@ -46,9 +46,9 @@
                 //background: #2058d1;
                 background-image: linear-gradient(to top, #2058d1, #1e53c3, #1c4db6, #1b48a8, #1a439b);
 
-                &:hover {
-                    background-image: linear-gradient(to top, #1f50bb, #1b49ac, #1944a1, #174097, #163a88);
-                }
+                // &:hover {
+                //     background-image: linear-gradient(to top, #1f50bb, #1b49ac, #1944a1, #174097, #163a88);
+                // }
 
                 color: white;
                 padding: 1em 0;

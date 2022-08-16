@@ -13,6 +13,7 @@ export class LandingComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    localStorage.clear();
   }
 
 }

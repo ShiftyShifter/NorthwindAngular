@@ -13,6 +13,8 @@ import { LoginService } from '../services/login.service';
 export class CategoriesComponent implements OnInit {
   categories: ICategory[] = [];
   displayAddUI: boolean = false;
+  displayDeletePopup: boolean = false;
+  displayAddPopup: boolean = false;
 
   model: any = {
     name: '',
@@ -40,12 +42,33 @@ export class CategoriesComponent implements OnInit {
   }
 
   AddCategory(){
-    this.categoryService.postCategory(this.model).subscribe();
+    this.categoryService.postCategory(this.model).subscribe(
+      {
+        next: (data) =>{
+          console.log(data);
+        }
+      }
+    );
+    setTimeout(() => {
+      this.ngOnInit()
+    }, 1000)
     this.displayAddUI = !this.displayAddUI;
+    this.categoryService.getCategories().subscribe(data => this.categories = data );
+    this.displayAddPopup = !this.displayAddPopup;
+    setTimeout(() => {
+      this.displayAddPopup = !this.displayAddPopup;
+    }, 1500)
   }
 
   RemoveCategory(id){
     this.categoryService.deleteCategory(id).subscribe();
+    setTimeout(() => {
+      this.ngOnInit()
+    }, 300)
+    this.displayDeletePopup = !this.displayDeletePopup;
+    setTimeout(() => {
+      this.displayDeletePopup = !this.displayDeletePopup;
+    }, 1500)
   }
 
 }

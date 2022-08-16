@@ -44,3 +44,15 @@
         </div>
     </form>
 </div>
+
+<div *ngIf="displayDeletePopup" class="info-popup-container" style="display: flex; background: rgba(0, 0, 0, 0.2);">
+    <div class="deleted">
+        Succesfully deleted!
+    </div>
+</div>
+
+<div *ngIf="displayAddPopup" class="info-popup-container" style="display: flex; background: rgba(0, 0, 0, 0.2);">
+    <div class="added">
+        Succesfully added!
+    </div>
+</div>

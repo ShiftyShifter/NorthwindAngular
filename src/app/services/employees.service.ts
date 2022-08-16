@@ -16,8 +16,8 @@ export class EmployeesService {
     return this.http.get<IEmployee[]>(this.url);
   }
 
-  postEmployee(product: IEmployee): Observable<IEmployee>{
-    return this.http.post<IEmployee>(this.url, product);
+  postEmployee(employee: IEmployee): Observable<IEmployee>{
+    return this.http.post<IEmployee>(this.url, employee);
   }
 
   deleteEmployee(employeeId: number){

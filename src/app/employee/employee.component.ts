@@ -16,7 +16,7 @@ export class EmployeeComponent implements OnInit {
 
   model: any = {
     firstName: '',
-    lastName: 0,
+    lastName: '',
     title: '',
     country: '',
     city: '',
