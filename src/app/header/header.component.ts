@@ -11,12 +11,21 @@ export class HeaderComponent implements OnInit {
   ifLogged: boolean = this.converter();
   lang;
 
-  converter(): boolean{
+  language = {
+    home: 'Home',
+    products: 'Products',
+    categories: 'Categories',
+    employees: 'Employees',
+    contacts: 'Contact',
+    login: 'Login',
+  }
+
+  converter(): boolean {
     let localStorageLogged = localStorage.getItem('ifLogged')
-    if (localStorageLogged === 'true'){
+    if (localStorageLogged === 'true') {
       return true;
     }
-    else{
+    else {
       return false
     }
   }
@@ -26,14 +35,36 @@ export class HeaderComponent implements OnInit {
   }
 
   constructor() {
-    
+
   }
 
   ngOnInit(): void {
     this.lang = localStorage.getItem('lang') || 'en';
+    
+    if (this.lang === 'en') {
+      this.language = {
+        home: 'Home',
+        products: 'Products',
+        categories: 'Categories',
+        employees: 'Employees',
+        contacts: 'Contact',
+        login: 'Login'
+      }
+    }
+    else{
+      this.language = {
+        home: 'Anasayfa',
+        products: 'Ürünler',
+        categories: 'Kategoriler',
+        employees: 'Çalışanlar',
+        contacts: 'İletişim',
+        login: 'Giriş'
+      }
+    }
+    
   }
 
-  changeLang(lang){
+  changeLang(lang) {
     localStorage.setItem('lang', lang);
     window.location.reload();
   }

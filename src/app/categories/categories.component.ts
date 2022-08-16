@@ -15,6 +15,17 @@ export class CategoriesComponent implements OnInit {
   displayAddUI: boolean = false;
   displayDeletePopup: boolean = false;
   displayAddPopup: boolean = false;
+  lang;
+  language = {
+    add: 'Add',
+    delete: 'Delete',
+    update: 'Update',
+    more: 'Info',
+    categoryName: 'Category Name',
+    description: 'Description',
+    added: 'Successfully added!',
+    deleted: 'Successfully deleted!'
+  }
 
   model: any = {
     name: '',
@@ -28,23 +39,46 @@ export class CategoriesComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    /* this.loginService.loginServer().subscribe(
-      data => console.log(data)
-    ); */
-     this.categoryService.getCategories().subscribe(
+    this.categoryService.getCategories().subscribe(
       data => { this.categories = data; }
     );
+
+    this.lang = localStorage.getItem('lang') || 'en';
+    if (this.lang === 'en') {
+      this.language = {
+        add: 'Add',
+        delete: 'Delete',
+        update: 'Update',
+        more: 'Info',
+        categoryName: 'Category Name',
+        description: 'Description',
+        added: 'Successfully added!',
+        deleted: 'Successfully deleted!'
+      }
+    }
+    else {
+      this.language = {
+        add: 'Ekle',
+        delete: 'Sil',
+        update: 'Düzenle',
+        more: 'Bilgi',
+        categoryName: 'Kategori Adı',
+        description: 'İçerikler',
+        added: 'Başarıyla Eklendi!',
+        deleted: 'Başarıyla Silindi!'
+      }
+    }
   }
 
-  toggleAddUI(){
+  toggleAddUI() {
     this.displayAddUI = !this.displayAddUI;
     console.log(this.displayAddUI);
   }
 
-  AddCategory(){
+  AddCategory() {
     this.categoryService.postCategory(this.model).subscribe(
       {
-        next: (data) =>{
+        next: (data) => {
           console.log(data);
         }
       }
@@ -53,14 +87,14 @@ export class CategoriesComponent implements OnInit {
       this.ngOnInit()
     }, 1000)
     this.displayAddUI = !this.displayAddUI;
-    this.categoryService.getCategories().subscribe(data => this.categories = data );
+    this.categoryService.getCategories().subscribe(data => this.categories = data);
     this.displayAddPopup = !this.displayAddPopup;
     setTimeout(() => {
       this.displayAddPopup = !this.displayAddPopup;
     }, 1500)
   }
 
-  RemoveCategory(id){
+  RemoveCategory(id) {
     this.categoryService.deleteCategory(id).subscribe();
     setTimeout(() => {
       this.ngOnInit()

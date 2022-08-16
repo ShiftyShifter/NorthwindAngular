@@ -1,6 +1,6 @@
 <header>
   <div class="logo-container">
-    <div class="logo">North<span>Wind</span></div>
+    <div routerLink="/home" class="logo">North<span>Wind</span></div>
     <svg (click)="closeNav()" width="48px" height="48px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
       <title>70 Basic icons by Xicons.co</title>
       <path d="M41,14H7a2,2,0,0,1,0-4H41A2,2,0,0,1,41,14Z" fill="#6f7380" />
@@ -20,14 +20,14 @@
         </svg>
       </li>
       <div *ngIf="ifLogged" class="hide-login" style="display: flex; justify-content: space-between; width: 700px;">
-        <li routerLink="/home">Home</li>
-        <li routerLink="/products">Products</li>
-        <li routerLink="/categories">Categories</li>
-        <li routerLink="/employees">Employees</li>
-        <li routerLink="/contacts">Contact</li>
+        <li routerLink="/home">{{language.home}}</li>
+        <li routerLink="/products">{{language.products}}</li>
+        <li routerLink="/categories">{{language.categories}}</li>
+        <li routerLink="/employees">{{language.employees}}</li>
+        <li routerLink="/contacts">{{language.contacts}}</li>
       </div>
-      <li routerLink="/login">Login</li>
-      <select class="custom-select" #mySelect (change)="changeLang(mySelect.value)" style="display: none;">
+      <li routerLink="/login">{{language.login}}</li>
+      <select class="custom-select" #mySelect (change)="changeLang(mySelect.value)" >
         <option value="en" [selected]="lang == 'en'">English</option>
         <option value="tr" [selected]="lang == 'tr'">Türkçe</option>
       </select>

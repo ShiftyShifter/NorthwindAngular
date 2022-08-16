@@ -29,4 +29,8 @@ export class TestProductsService {
   putProduct(productId: number, product: ITestProducts){
     return this.http.put(this.url + "/" + productId, product);
   }
+
+  getOneProduct(): Observable<ITestProducts>{
+    return this.http.get<ITestProducts>(this.url);
+  }
 }

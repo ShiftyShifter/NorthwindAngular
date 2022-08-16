@@ -7,18 +7,18 @@
                     <img src="http://localhost:3030/api/products/images/{{category.id}}.jpg" alt="{{category.name}}">
                 </div>
                 <div class="descriptions-container">
-                    <p>Category Name: <span>{{category.name | slice:0:30}}</span></p>
-                    <p>Description: <span>{{category.description}}</span></p>
+                    <p>{{language.categoryName}}: <span>{{category.name | slice:0:30}}</span></p>
+                    <p>{{language.description}}: <span>{{category.description}}</span></p>
                 </div>
                 <div class="buttons-container">
-                    <button (click)="RemoveCategory(category.id)">Delete</button>
-                    <button>Update</button>
-                    <button>More</button>
+                    <button (click)="RemoveCategory(category.id)">{{language.delete}}</button>
+                    <button>{{language.update}}</button>
+                    <button>{{language.more}}</button>
                 </div>
             </div>
         </div>
         <div (click)="toggleAddUI()" class="add-btn">
-            Add
+            {{language.add}}
         </div>
     </div>
 </div>
@@ -30,11 +30,11 @@
         </div>
         <div class="popup-login">
             <div class="form-name">
-                <label for="text">Category Name</label>
+                <label for="text">{{language.categoryName}}</label>
                 <input [(ngModel)]="model.name" name="name" type="text">
             </div>
             <div class="form-price">
-                <label for="text">Description</label>
+                <label for="text">{{language.description}}</label>
                 <input [(ngModel)]="model.description" name="description"  type="text">
             </div>
             <div class="buttons">
@@ -47,12 +47,12 @@
 
 <div *ngIf="displayDeletePopup" class="info-popup-container" style="display: flex; background: rgba(0, 0, 0, 0.2);">
     <div class="deleted">
-        Succesfully deleted!
+        {{language.deleted}}
     </div>
 </div>
 
 <div *ngIf="displayAddPopup" class="info-popup-container" style="display: flex; background: rgba(0, 0, 0, 0.2);">
     <div class="added">
-        Succesfully added!
+        {{language.added}}
     </div>
 </div>

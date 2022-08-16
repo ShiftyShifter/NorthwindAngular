@@ -5,7 +5,7 @@
                 <input type="text" name="search" [(ngModel)]="searchText" placeholder="looking for...">
             </li>
             <li>
-                <button>SEARCH</button>
+                <button>{{language.search}}</button>
             </li>
         </ul>
         <ul style="background: #DBDBDB; cursor: wait; display: none;" class="view-container">
@@ -28,10 +28,10 @@
         </ul>
         <ul class="save-add-container">
             <li>
-                <button style="background: #DBDBDB; cursor: wait; border: 1px solid #DBDBDB">SAVE SEARCH</button>
+                <button (click)="saveSearch()">{{language.saveSearch}}</button>
             </li>
             <li>
-                <button (click)="toggleAddUI()">ADD</button>
+                <button (click)="toggleAddUI()">{{language.add}}</button>
             </li>
         </ul>
     </nav>
@@ -44,14 +44,14 @@
                     <img src="http://localhost:3030/api/products/images/{{item.id}}.jpg" alt="{{item.name}}">
                 </div>
                 <div class="descriptions-container">
-                    <p>Product Name: <span>{{item.name | slice:0:30}}</span></p>
-                    <p>Price: <span>{{item.price}}$</span></p>
-                    <p>Stock: <span>{{item.stock}}</span></p>
+                    <p>{{language.productName}}: <span>{{item.name | slice:0:30}}</span></p>
+                    <p>{{language.price}}: <span>{{item.price}}$</span></p>
+                    <p>{{language.stock}}: <span>{{item.stock}}</span></p>
                 </div>
                 <div class="buttons-container">
-                    <button (click)="RemoveProduct(item.id)">Delete</button>
-                    <button>Update</button>
-                    <button (click)="toggleInfoUI(item)">More</button>
+                    <button (click)="RemoveProduct(item.id)">{{language.delete}}</button>
+                    <button (click)="toggleUpdateUI()">{{language.update}}</button>
+                    <button (click)="toggleInfoUI(item)">{{language.more}}</button>
                 </div>
             </div>
         </div>
@@ -65,20 +65,46 @@
         </div>
         <div class="popup-login">
             <div class="form-name">
-                <label for="text">Product Name</label>
+                <label for="text">{{language.productName}}</label>
                 <input [(ngModel)]="model.name" name="name" type="text">
             </div>
             <div class="form-price">
-                <label for="text">Price</label>
+                <label for="text">{{language.price}}</label>
                 <input [(ngModel)]="model.price" name="price"  type="number">
             </div>
             <div class="form-stock">
-                <label for="text">Stock</label>
+                <label for="text">{{language.stock}}</label>
                 <input [(ngModel)]="model.stock" name="stock" type="number">
             </div>
             <div class="buttons">
                 <button (click)="toggleAddUI()">Back</button>
                 <button (click)="AddProduct()">Add</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="add-popup-container" [ngStyle]="{'display':displayUpdateUI === false ? 'none' : 'flex' }">
+    <form #updateForm="ngForm" (ngSubmit) = "onUpdateProductSubmit(updateForm.value)">
+        <div class="image-container">
+            <img src="../../assets/images/add-product.png" alt="a guy adding products">
+        </div>
+        <div class="popup-login">
+            <div class="form-name">
+                <label for="text">{{language.productName}}</label>
+                <input name="name" type="text" ngModel>
+            </div>
+            <div class="form-price">
+                <label for="text">{{language.price}}</label>
+                <input name="price"  type="number" ngModel>
+            </div>
+            <div class="form-stock">
+                <label for="text">{{language.stock}}</label>
+                <input name="stock" type="number" ngModel>
+            </div>
+            <div class="buttons">
+                <button (click)="toggleUpdateUI()">Back</button>
+                <button (click)="onUpdateProductSubmit(updateForm)">Update</button>
             </div>
         </div>
     </form>
@@ -97,13 +123,13 @@
 
 <div *ngIf="displayDeletePopup" class="info-popup-container" style="display: flex; background: rgba(0, 0, 0, 0.2);">
     <div class="deleted">
-        Succesfully deleted!
+        {{language.deleted}}
     </div>
 </div>
 
 <div *ngIf="displayAddPopup" class="info-popup-container" style="display: flex; background: rgba(0, 0, 0, 0.2);">
     <div class="added">
-        Succesfully added!
+        {{language.added}}
     </div>
 </div>
 

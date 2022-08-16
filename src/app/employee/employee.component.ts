@@ -14,6 +14,20 @@ export class EmployeeComponent implements OnInit {
   displayAddPopup: boolean = false;
   searchText: any;
 
+  lang;
+  language = {
+    add: 'ADD',
+    delete: 'Delete',
+    update: 'Update',
+    firstName: 'First Name',
+    lastName: 'Last Name',
+    country: 'Country',
+    city: 'City',
+    birthDate: 'Birth Date',
+    added: 'Successfully added!',
+    deleted: 'Successfully deleted!'
+  }
+
   model: any = {
     firstName: '',
     lastName: '',
@@ -29,16 +43,47 @@ export class EmployeeComponent implements OnInit {
     this.employeeService.getEmployees().subscribe(
       data => this.employees = data
     );
+    
+    this.lang = localStorage.getItem('lang') || 'en';
+
+    if (this.lang === 'en') {
+      this.language = {
+        add: 'ADD',
+        delete: 'Delete',
+        update: 'Update',
+        firstName: 'First Name',
+        lastName: 'Last Name',
+        country: 'Country',
+        city: 'City',
+        birthDate: 'Birth Date',
+        added: 'Successfully added!',
+        deleted: 'Successfully deleted!'
+      }
+    }
+    else {
+      this.language = {
+        add: 'EKLE',
+        delete: 'Sil',
+        update: 'Düzenle',
+        firstName: 'Adı',
+        lastName: 'Soyadı',
+        country: 'Ülke',
+        city: 'Şehir',
+        birthDate: 'Dogum Tarihi',
+        added: 'Başarıyla Eklendi!',
+        deleted: 'Başarıyla Silindi!'
+      }
+    }
   }
 
-  toggleAddUI(){
+  toggleAddUI() {
     this.displayAddUI = !this.displayAddUI;
   }
 
-  AddEmployee(){
+  AddEmployee() {
     this.employeeService.postEmployee(this.model).subscribe(
       {
-        next: (data) =>{
+        next: (data) => {
           console.log(data);
         }
       }
@@ -47,14 +92,14 @@ export class EmployeeComponent implements OnInit {
       this.ngOnInit()
     }, 1000)
     this.displayAddUI = !this.displayAddUI;
-    this.employeeService.getEmployees().subscribe(data => this.employees = data );
+    this.employeeService.getEmployees().subscribe(data => this.employees = data);
     this.displayAddPopup = !this.displayAddPopup;
     setTimeout(() => {
       this.displayAddPopup = !this.displayAddPopup;
     }, 1500)
   }
 
-  RemoveEmployee(id){
+  RemoveEmployee(id) {
     this.employeeService.deleteEmployee(id).subscribe();
     setTimeout(() => {
       this.ngOnInit()
