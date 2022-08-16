@@ -12,10 +12,9 @@ run northwind in your local port
      
      northwind
     
-#### Widescreen View
+#### Demo Video
+https://youtu.be/l4xOnQ5V9-Q
 
-
-#### Mobile View
 
 
 
