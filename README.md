@@ -11,7 +11,9 @@ install northwind backend globally on your computer
 run northwind in your local port
      
      northwind
-    
+
+lastly `ng serve --open` to run the project
+
 #### Demo Video
 https://youtu.be/l4xOnQ5V9-Q
 
